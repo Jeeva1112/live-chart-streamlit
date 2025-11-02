@@ -18,8 +18,13 @@ st.markdown("""
         }
         header {visibility: hidden;}
         footer {visibility: hidden;}
-        .sidebar .sidebar-content {
-            width: 500px;
+        [data-testid="stSidebar"] {
+            background-color: #0f1116;
+            padding: 1rem 0.5rem;
+            width: 260px !important;
+        }
+        [data-testid="stSidebar"] * {
+            color: white;
         }
         .css-1v3fvcr {padding-top: 0 !important;}
         .nav-tabs {
