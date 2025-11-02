@@ -5,11 +5,11 @@ from streamlit_option_menu import option_menu
 from streamlit_navigation_bar import st_navbar
 # ---------------------- PAGE CONFIG ----------------------
 st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide",initial_sidebar_state="collapsed")
+
 pages = ["Home", "Library", "Tutorials", "Development", "Download"]
-# ---------------------- STYLES ----------------------
 styles = {
     "nav": {
-        "background-color": "rgb(58, 55, 212)",
+        "background-color": "rgb(123, 209, 146)",
     },
     "div": {
         "max-width": "32rem",
@@ -27,7 +27,9 @@ styles = {
         "background-color": "rgba(255, 255, 255, 0.35)",
     },
 }
-page = st_navbar(page=pages,styles=styles)
+
+page = st_navbar(pages, styles=styles)
+st.write(page)
 
 with st.sidebar:
     st.write("Sidebar")
