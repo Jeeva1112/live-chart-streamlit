@@ -10,6 +10,7 @@ st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide")
 st.markdown("""
 <style>
 .block-container {
+top: 0;
      padding-top: 0rem !important;
     margin-top: 2rem !important;  /* Pull content slightly up */
 }
