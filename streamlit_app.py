@@ -9,13 +9,13 @@ st.markdown("""
 <style>
 .block-container {
     padding-top: 0rem !important;
-    margin-top: -2rem !important;  /* Pull content slightly up */
+    margin-top: 1rem !important;  /* Pull content slightly up */
 }
 
 /* Also handle Streamlit Cloud’s new layout container */
 main[data-testid="stAppViewContainer"] {
     padding-top: 0rem !important;
-    margin-top: -2rem !important;
+    margin-top: 1rem !important;
 }
 
 /* Hide default top header padding */
