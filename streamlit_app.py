@@ -15,7 +15,7 @@ st.markdown("""
         [data-testid="stToolbar"] {visibility: hidden !important;}
         [data-testid="stDecoration"] {display: none !important;}
         [data-testid="stStatusWidget"] {display: none !important;}
-        header {height: 0px; visibility: hidden;}
+   
 
         /* --- FIX CONTENT PADDING --- */
         .block-container {
