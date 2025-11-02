@@ -31,12 +31,44 @@ button[kind="header"] {
 }
 
 /* Remove excess top padding from main page */
-.block-container {
-    padding-top: 1rem !important;
-    margin-top: 1rem !important;
-    border-right: 1px solid #1e1e1e !important;
-    padding: 1rem !important;
-}
+        [data-testid="stVerticalBlock"] > div:first-child {
+            padding-top: 0rem !important;
+            margin-top: -1rem !important;
+        }
+
+        /* Header container alignment */
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-container img {
+            margin-top: 0 !important;
+        }
+
+        .header-title {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* Sidebar toggle visibility & alignment */
+        button[kind="header"] {
+            top: 5px !important;
+        }
+
+        /* Reduce sidebar width slightly */
+        section[data-testid="stSidebar"] {
+            width: 270px !important;
+        }
+
+        /* Adjust Streamlit body to start higher */
+        .block-container {
+            padding-top: 0rem !important;
+        }
 main[data-testid="stAppViewContainer"] {
     padding-top: 0rem !important;
 }
@@ -49,11 +81,12 @@ main[data-testid="stAppViewContainer"] {
 </style>
 """, unsafe_allow_html=True)
 with st.container():
-    col1, col2 = st.columns([0.15, 0.65])
-    with col1:
-        st.image("philips.svg", width=60)
-    with col2:
-        st.markdown("<h2 style='color:white;margin-top:3px;'>📊 Digital Finance Chart Studio</h2>", unsafe_allow_html=True)
+    st.markdown("""
+        <div class="header-container">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Philips_logo.svg" width="60">
+            <h3 class="header-title">📊 Digital Finance Chart Studio</h3>
+        </div>
+    """, unsafe_allow_html=True)
 
 # ---------------------- NAVBAR ----------------------
 selected = option_menu(
