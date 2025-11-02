@@ -51,7 +51,7 @@ st.markdown("""
 with st.container():
     st.markdown("""
         <div class="header-container">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Philips_logo.svg" width="60">
+            <img src="philips.svg" width="60">
             <h3 class="header-title">📊 Digital Finance Chart Studio</h3>
         </div>
     """, unsafe_allow_html=True)
