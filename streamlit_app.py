@@ -12,27 +12,28 @@ st.markdown("""
         /* Reduce main app padding */
         .block-container {
             padding-top: 0.2rem !important;
+            padding: 1rem 1.5rem 0.5rem 1.5rem;
         }
 
-        /* Header container: now with proper spacing from toolbar */
-        .header-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            background-color: transparent;
-            padding: 1rem 1.5rem 0.5rem 1.5rem; /* top margin below Streamlit bar */
-        }
+        # /* Header container: now with proper spacing from toolbar */
+        # .header-container {
+        #     display: flex;
+        #     align-items: center;
+        #     gap: 15px;
+        #     background-color: transparent;
+        #     padding: 1rem 1.5rem 0.5rem 1.5rem; /* top margin below Streamlit bar */
+        # }
 
-        .header-logo {
-            height: 45px;
-        }
+        # .header-logo {
+        #     height: 45px;
+        # }
 
-        .header-title {
-            color: white;
-            font-size: 1.7rem;
-            font-weight: 600;
-            margin: 0;
-        }
+        # .header-title {
+        #     color: white;
+        #     font-size: 1.7rem;
+        #     font-weight: 600;
+        #     margin: 0;
+        # }
 
         /* Sidebar styling */
         section[data-testid="stSidebar"] {
