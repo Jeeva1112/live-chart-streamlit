@@ -70,7 +70,8 @@ selected = option_menu(
 
 # ---------------------- DATA LOAD ----------------------
 if selected == "Dashboard":
-    
+    st.write("")
+    uploaded_file = st.file_uploader("📁 Upload CSV or JSON file", type=["csv", "json"])
     if uploaded_file:
         if uploaded_file.name.endswith(".csv"):
             df = pd.read_csv(uploaded_file)
@@ -102,8 +103,6 @@ if selected == "Dashboard":
         )
         show_legend = st.checkbox("Show Legend", True)
         smooth_line = st.checkbox("Smooth Lines (Line/Area)", False)
-    st.write("")
-    uploaded_file = st.file_uploader("📁 Upload CSV or JSON file", type=["csv", "json"])
 
 
 
