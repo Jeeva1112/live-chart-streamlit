@@ -114,7 +114,7 @@ if selected == "Dashboard":
 
 
     # ---------------------- CHART GENERATION ----------------------
-    fig = None
+    #fig = None
 
     # Define color args properly
     color_args = {}
