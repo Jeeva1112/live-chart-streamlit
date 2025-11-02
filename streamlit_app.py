@@ -3,37 +3,48 @@ import pandas as pd
 import plotly.express as px
 from streamlit_option_menu import option_menu
 
-# ---------------------- CONFIG ----------------------
-st.set_page_config(page_title="Chart Studio", layout="wide",initial_sidebar_state="expanded")
+# ---------------------- PAGE CONFIG ----------------------
+st.set_page_config(
+    page_title="Philips Digital Chart Studio",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
 # ---------------------- CUSTOM STYLES ----------------------
 st.markdown("""
     <style>
+        /* Remove top padding & gaps */
         .block-container {
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-        }
-        .stApp {
-            background-color: #0f1116;
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
         }
         header {visibility: hidden;}
         footer {visibility: hidden;}
+
+        /* Philips dark theme */
+        .stApp {
+            background-color: #0f1116;
+            color: white !important;
+        }
+
+        /* Sidebar always visible */
         section[data-testid="stSidebar"] {
             visibility: visible !important;
             display: flex !important;
             background-color: #0f1116 !important;
-            color: white !important;
+            border-right: 1px solid #1e1e1e !important;
             width: 300px !important;
             padding: 1rem !important;
-            border-right: 1px solid #333;
         }
         section[data-testid="stSidebar"] * {
             color: white !important;
+            font-size: 14px !important;
         }
-        /* Prevent the sidebar from collapsing */
-        button[kind="header"] { display: none !important; }
-        
-        .css-1v3fvcr {padding-top: 0 !important;}
+
+        /* Hide Streamlit sidebar collapse button */
+        button[kind="header"] {display: none !important;}
+
+        /* Navbar styling */
         .nav-tabs {
             background-color: #003366;
             color: white;
@@ -45,12 +56,14 @@ st.markdown("""
 
 # ---------------------- HEADER ----------------------
 with st.container():
-    col1, col2 = st.columns([0.15, 0.85])
+    col1, col2 = st.columns([0.1, 0.9])
     with col1:
         st.image("philips.svg", width=70)
     with col2:
-        st.markdown("<h3 style='color:white;margin-top:10px;'>📊 Digital Finance Chart Studio</h3>", unsafe_allow_html=True)
-
+        st.markdown(
+            "<h3 style='color:white;margin-top:10px;'>📊 Digital Finance Chart Studio</h3>",
+            unsafe_allow_html=True
+        )
 # ---------------------- NAVBAR ----------------------
 selected = option_menu(
     None,
