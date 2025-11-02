@@ -83,6 +83,8 @@ if selected == "Dashboard":
     #     st.info("Using sample data (Gapminder 2007).")
     #     df = px.data.gapminder().query("year == 2007")
         # ---------------------- CONTROL PANEL ----------------------
+    st.sidebar.success("✅ Sidebar is visible now!")
+
     with st.sidebar:
         st.markdown("### ⚙️ Chart Controls")
         chart_type = st.selectbox(
