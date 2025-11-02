@@ -10,7 +10,6 @@ st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide")
 st.markdown("""
 <style>
 .block-container {
-top: 0;
      padding-top: 0rem !important;
 }
 /* Also handle Streamlit Cloud’s new layout container */
