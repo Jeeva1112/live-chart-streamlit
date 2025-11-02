@@ -10,6 +10,7 @@ st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide")
 st.markdown("""
     <style>
         /* Reduce main app padding */
+        header, footer {visibility: hidden; height: 0 !important;}
         .block-container {
             padding-top: 0.2rem !important;
             padding: 1rem 1.5rem 0.5rem 1.5rem;
