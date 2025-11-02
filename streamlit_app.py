@@ -42,6 +42,8 @@ main[data-testid="stAppViewContainer"] {
     background-color: #0f1116 !important;
     color: white !important;
 }
+        header {visibility: hidden;}
+        footer {visibility: hidden;}
 </style>
 """, unsafe_allow_html=True)
 with st.container():
