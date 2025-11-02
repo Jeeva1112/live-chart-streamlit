@@ -29,27 +29,16 @@ button[kind="header"] {
     display: none !important;
 
 }
-.custom-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            padding: 0.5rem 0;
-            margin-bottom: 0.2rem;
-        }
-        .custom-header img {
-            height: 50px;
-            margin-top: 2px;
-        }
-        .custom-header h3 {
-            color: white;
-            margin: 0;
-            font-weight: 700;
-        }
 
 /* Remove excess top padding from main page */
 .block-container {
     padding-top: 0rem !important;
     margin-top: 1rem !important;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.5rem 0;
+    margin-bottom: 0.2rem;
 }
 main[data-testid="stAppViewContainer"] {
     padding-top: 0rem !important;
