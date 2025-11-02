@@ -9,13 +9,13 @@ st.markdown("""
 <style>
 .block-container {
     padding-top: 0rem !important;
-    margin-top: 1rem !important;  /* Pull content slightly up */
+    margin-top: 0rem !important;  /* Pull content slightly up */
 }
 
 /* Also handle Streamlit Cloud’s new layout container */
 main[data-testid="stAppViewContainer"] {
     padding-top: 0rem !important;
-    margin-top: 1rem !important;
+    margin-top: 0rem !important;
 }
 
 /* Hide default top header padding */
@@ -30,7 +30,7 @@ with st.container():
     with col1:
         st.image("philips.svg", width=70)
     with col2:
-        st.markdown("<h2 style='color:white;margin-top:5px;'>📊 Digital Finance Chart Studio</h2>", unsafe_allow_html=True)
+        st.markdown("<h2 style='color:white;margin-top:5px;'>📊 Digital Finance Chart Studio</h3>", unsafe_allow_html=True)
 
 # ---------------------- NAVBAR ----------------------
 selected = option_menu(
