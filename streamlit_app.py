@@ -35,7 +35,7 @@ st.markdown("""
 with st.container():
     col1, col2 = st.columns([0.15, 0.85])
     with col1:
-        st.image("philips.svg", width=70)
+        st.image("./assets/philips.svg", width=70)
     with col2:
         st.markdown("<h3 style='color:white;margin-top:10px;'>📊 Digital Finance Chart Studio</h3>", unsafe_allow_html=True)
 
