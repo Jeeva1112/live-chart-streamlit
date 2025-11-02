@@ -7,22 +7,41 @@ st.set_page_config(page_title="Live Chart", layout="wide", initial_sidebar_state
 
 st.markdown("""
 <style>
+/* Force the sidebar to always stay visible */
+section[data-testid="stSidebar"] {
+    display: flex !important;
+    visibility: visible !important;
+    background-color: #0f1116 !important;
+    border-right: 1px solid #1e1e1e !important;
+    width: 320px !important;   /* adjust width as you like */
+    padding: 1rem !important;
+}
+
+/* Sidebar text style */
+section[data-testid="stSidebar"] * {
+    color: white !important;
+    font-size: 14px !important;
+}
+
+/* Prevent sidebar collapse button from hiding it */
+button[kind="header"] {
+    display: none !important;
+}
+
+/* Remove excess top padding from main page */
 .block-container {
     padding-top: 0rem !important;
-    margin-top: -1rem !important;  /* Pull content slightly up */
+    margin-top: -1.5rem !important;
 }
-
-/* Also handle Streamlit Cloud’s new layout container */
 main[data-testid="stAppViewContainer"] {
     padding-top: 0rem !important;
-    margin-top: -1rem !important;
 }
 
-/* Hide default top header padding */
-header, footer {visibility: hidden; height: 0 !important;}
-.sidebar .sidebar-content { width: 280px !important; background-color: #0f1116 !important; }
-section[data-testid="stSidebar"] { background-color: #0f1116 !important; border-right: 1px solid #1e1e1e; width: 280px !important; display:block !important; }
-section[data-testid="stSidebar"] * { color: white !important; font-size: 14px; }
+/* Dark theme base */
+.stApp {
+    background-color: #0f1116 !important;
+    color: white !important;
+}
 </style>
 """, unsafe_allow_html=True)
 with st.container():
