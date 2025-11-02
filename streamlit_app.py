@@ -7,6 +7,10 @@ import json
 # ---------------------- PAGE CONFIG ----------------------
 st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide")
 
+
+# ✅ Safely read query parameters
+query_params = st.experimental_get_query_params()
+
 if "payload" in query_params:
     try:
         # Parse JSON string from URL
