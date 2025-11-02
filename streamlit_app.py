@@ -3,7 +3,7 @@ import pandas as pd
 import plotly.express as px
 from streamlit_option_menu import option_menu
 
-st.set_page_config(page_title="Sidebar Test", layout="wide", initial_sidebar_state="expanded")
+st.set_page_config(page_title="Live Chart", layout="wide", initial_sidebar_state="expanded")
 
 st.markdown("""
 <style>
@@ -13,7 +13,7 @@ section[data-testid="stSidebar"] * { color: white !important; font-size: 14px; }
 </style>
 """, unsafe_allow_html=True)
 with st.container():
-    col1, col2 = st.columns([0.15, 0.4])
+    col1, col2 = st.columns([0.15, 0.3])
     with col1:
         st.image("philips.svg", width=70)
     with col2:
