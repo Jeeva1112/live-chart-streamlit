@@ -4,49 +4,37 @@ import plotly.express as px
 from streamlit_option_menu import option_menu
 from streamlit_navigation_bar import st_navbar
 # ---------------------- PAGE CONFIG ----------------------
-st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide")
+st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide",initial_sidebar_state="collapsed")
 
 # ---------------------- STYLES ----------------------
-st.markdown("""
-    <style>
-        /* Toolbar container */
-        .custom-toolbar {
-            background-color: #003366;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.6rem 1.5rem;
-            border-radius: 5px;
-        }
-        .toolbar-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .toolbar-left img {
-            width: 50px;
-            height: auto;
-        }
-        .toolbar-title {
-            font-size: 20px;
-            font-weight: 600;
-        }
-    </style>
-""", unsafe_allow_html=True)
 
-st.markdown("""
-<div class="custom-toolbar">
-    <div class="toolbar-left">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Philips_logo_new.svg">
-        <span class="toolbar-title">📊 Digital Finance Chart Studio</span>
-    </div>
-    <div class="toolbar-right">
-        <span style="font-size:14px;opacity:0.8;">Finance BI</span>
-    </div>
-</div>
-""", unsafe_allow_html=True)
+pages = ["Home", "Library", "Tutorials", "Development", "Download"]
+styles = {
+    "nav": {
+        "background-color": "rgb(123, 209, 146)",
+    },
+    "div": {
+        "max-width": "32rem",
+    },
+    "span": {
+        "border-radius": "0.5rem",
+        "color": "rgb(49, 51, 63)",
+        "margin": "0 0.125rem",
+        "padding": "0.4375rem 0.625rem",
+    },
+    "active": {
+        "background-color": "rgba(255, 255, 255, 0.25)",
+    },
+    "hover": {
+        "background-color": "rgba(255, 255, 255, 0.35)",
+    },
+}
 
+page = st_navbar(pages, styles=styles)
+st.write(page)
+
+with st.sidebar:
+    st.write("Sidebar")
 # ---------------------- NAVBAR ----------------------
 selected = option_menu(
     None,
