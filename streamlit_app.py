@@ -31,7 +31,7 @@ button[kind="header"] {
 /* Remove excess top padding from main page */
 .block-container {
     padding-top: 0rem !important;
-    margin-top: 1.5rem !important;
+    margin-top: 1rem !important;
 }
 main[data-testid="stAppViewContainer"] {
     padding-top: 0rem !important;
@@ -45,9 +45,9 @@ main[data-testid="stAppViewContainer"] {
 </style>
 """, unsafe_allow_html=True)
 with st.container():
-    col1, col2 = st.columns([0.25, 0.65])
+    col1, col2 = st.columns([0.15, 0.65])
     with col1:
-        st.image("philips.svg", width=70)
+        st.image("philips.svg", width=70;)
     with col2:
         st.markdown("<h2 style='color:white;margin-top:7px;'>📊 Digital Finance Chart Studio</h2>", unsafe_allow_html=True)
 
