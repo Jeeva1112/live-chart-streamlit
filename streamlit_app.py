@@ -92,13 +92,12 @@ if selected == "Dashboard":
                 "Histogram", "Box", "Heatmap", "Treemap"
             ]
         )
-         if df is not None:
-              # Auto-detect some defaults
-              num_cols = df.select_dtypes(include=["number"]).columns.tolist()
-              cat_cols = df.select_dtypes(exclude=["number"]).columns.tolist()
 
-        x_axis = st.selectbox("X-axis", df.columns)
-        y_axis = st.multiselect("Y-axis", df.columns)
+        num_cols = df.select_dtypes(include=["number"]).columns.tolist()
+        cat_cols = df.select_dtypes(exclude=["number"]).columns.tolist()
+
+        x_axis = st.selectbox("X-axis", cat_cols or df.columns)
+        y_axis = st.multiselect("Y-axis",num_cols or  df.columns)
         color_col = st.selectbox("Color (optional)", [None] + df.columns.tolist())
         theme = st.selectbox(
             "Theme",
