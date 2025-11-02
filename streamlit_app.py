@@ -40,7 +40,7 @@ st.markdown("""
         section[data-testid="stSidebar"] {
             background-color: #0f1116 !important;
             border-right: 1px solid #1e1e1e !important;
-            padding-top: 1rem !important;
+            padding-top: 3rem !important;
         }
         section[data-testid="stSidebar"] * {
             color: white !important;
