@@ -52,7 +52,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---------------------- HEADER ----------------------
-with st.header-container():
+with st.container():
     col1, col2 = st.columns([0.15, 0.65])
     with col1:
         st.image("philips.svg", width=70)
