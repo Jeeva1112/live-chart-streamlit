@@ -47,7 +47,7 @@ main[data-testid="stAppViewContainer"] {
 with st.container():
     col1, col2 = st.columns([0.15, 0.65])
     with col1:
-        st.image("philips.svg", width=70;)
+        st.image("philips.svg", width=70)
     with col2:
         st.markdown("<h2 style='color:white;margin-top:7px;'>📊 Digital Finance Chart Studio</h2>", unsafe_allow_html=True)
 
