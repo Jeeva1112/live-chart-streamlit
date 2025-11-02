@@ -28,9 +28,9 @@ section[data-testid="stSidebar"] * { color: white !important; font-size: 14px; }
 with st.container():
     col1, col2 = st.columns([0.15, 0.85])
     with col1:
-        st.image("philips.svg", width=70)
+        st.image("philips.svg", width=50)
     with col2:
-        st.markdown("<h2 style='color:white;margin-top:10px;'>📊 Digital Finance Chart Studio</h3>", unsafe_allow_html=True)
+        st.markdown("<h2 style='color:white;margin-top:6px;'>📊 Digital Finance Chart Studio</h2>", unsafe_allow_html=True)
 
 # ---------------------- NAVBAR ----------------------
 selected = option_menu(
