@@ -9,46 +9,29 @@ st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide")
 # ---------------------- STYLES ----------------------
 st.markdown("""
     <style>
-        /* Reduce main app padding */
-        footer {visibility: hidden; height: 0 !important;}
-        .block-container {
-            padding-top: 0.2rem !important;
-            padding: 1rem 1.5rem 0.5rem 3.5rem;
+        /* Hide Streamlit toolbar, deploy, menu, and footer */
+        #MainMenu {visibility: hidden;}
+        header {visibility: hidden !important;}
+        footer {visibility: hidden !important;}
+        [data-testid="stToolbar"] {visibility: hidden !important;}
+        [data-testid="stStatusWidget"] {display: none !important;}
+        [data-testid="stDecoration"] {display: none !important;}
+        [data-testid="stAppViewBlockContainer"] {
+            padding-top: 0.5rem !important;
         }
 
-        # /* Header container: now with proper spacing from toolbar */
-        # .header-container {
-        #     display: flex;
-        #     align-items: center;
-        #     gap: 15px;
-        #     background-color: transparent;
-        #     padding: 0.3rem 1.5rem 0.5rem 1.5rem; /* top margin below Streamlit bar */
-        # }
-
-        # .header-logo {
-        #     height: 45px;
-        # }
-
-        # .header-title {
-        #     color: white;
-        #     font-size: 1.7rem;
-        #     font-weight: 600;
-        #     margin: 0;
-        # }
-
-        /* Sidebar styling */
+        /* Keep sidebar visible and styled */
         section[data-testid="stSidebar"] {
+            visibility: visible !important;
+            display: block !important;
             background-color: #0f1116 !important;
             border-right: 1px solid #1e1e1e !important;
-            padding-top: 3rem !important;
         }
         section[data-testid="stSidebar"] * {
             color: white !important;
             font-size: 14px !important;
         }
-
-        /* Keep footer hidden, do NOT hide header */
-        footer {visibility: hidden !important;}
+    
     </style>
 """, unsafe_allow_html=True)
 
