@@ -7,8 +7,6 @@ from streamlit_navigation_bar import st_navbar
 st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide",initial_sidebar_state="collapsed")
 
 # ---------------------- STYLES ----------------------
-
-pages = ["Home", "Library", "Tutorials", "Development", "Download"]
 styles = {
     "nav": {
         "background-color": "rgb(58, 55, 212)",
@@ -29,12 +27,6 @@ styles = {
         "background-color": "rgba(255, 255, 255, 0.35)",
     },
 }
-
-page = st_navbar(pages, styles=styles)
-st.write(page)
-
-with st.sidebar:
-    st.write("Sidebar")
 # ---------------------- NAVBAR ----------------------
 selected = option_menu(
     None,
