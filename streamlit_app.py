@@ -5,8 +5,6 @@ from streamlit_option_menu import option_menu
 
 st.set_page_config(page_title="Sidebar Test", layout="wide", initial_sidebar_state="expanded")
 
-st.markdown("<h3 style='color:white;'>Sidebar Visibility Test</h3>", unsafe_allow_html=True)
-
 st.markdown("""
 <style>
 .sidebar .sidebar-content { width: 280px !important; background-color: #0f1116 !important; }
