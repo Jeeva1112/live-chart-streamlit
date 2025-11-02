@@ -108,47 +108,47 @@ if selected == "Dashboard":
 
 
     # ---------------------- CHART GENERATION ----------------------
-    fig = None
+    # fig = None
 
-    # Define color args properly
-    color_args = {}
-    if chart_type in ["Heatmap"]:  # continuous color scale
-        color_args = {"color_continuous_scale": color_scheme}
-    else:
-        color_args = {"color_discrete_sequence": px.colors.qualitative.Plotly}
+    # # Define color args properly
+    # color_args = {}
+    # if chart_type in ["Heatmap"]:  # continuous color scale
+    #     color_args = {"color_continuous_scale": color_scheme}
+    # else:
+    #     color_args = {"color_discrete_sequence": px.colors.qualitative.Plotly}
 
-    if chart_type == "Bar":
-        fig = px.bar(df, x=x_axis, y=y_axis, color=color_col, template=theme, **color_args)
-    elif chart_type == "Line":
-        fig = px.line(df, x=x_axis, y=y_axis, color=color_col, template=theme, **color_args)
-        if smooth_line:
-            fig.update_traces(line_shape="spline")
-    elif chart_type == "Area":
-        fig = px.area(df, x=x_axis, y=y_axis, color=color_col, template=theme, **color_args)
-    elif chart_type == "Scatter":
-        fig = px.scatter(df, x=x_axis, y=y_axis[0] if y_axis else None, color=color_col, template=theme, **color_args)
-    elif chart_type == "Pie":
-        fig = px.pie(df, names=x_axis, values=y_axis[0] if y_axis else None, template=theme)
-    elif chart_type == "Donut":
-        fig = px.pie(df, names=x_axis, values=y_axis[0] if y_axis else None, hole=0.5, template=theme)
-    elif chart_type == "Histogram":
-        fig = px.histogram(df, x=x_axis, color=color_col, template=theme, **color_args)
-    elif chart_type == "Box":
-        fig = px.box(df, x=x_axis, y=y_axis[0] if y_axis else None, color=color_col, template=theme, **color_args)
-    elif chart_type == "Heatmap":
-        fig = px.density_heatmap(df, x=x_axis, y=y_axis[0] if y_axis else None, template=theme, color_continuous_scale=color_scheme)
-    elif chart_type == "Treemap":
-        fig = px.treemap(df, path=[x_axis, color_col] if color_col else [x_axis], values=y_axis[0] if y_axis else None, template=theme)
+    # if chart_type == "Bar":
+    #     fig = px.bar(df, x=x_axis, y=y_axis, color=color_col, template=theme, **color_args)
+    # elif chart_type == "Line":
+    #     fig = px.line(df, x=x_axis, y=y_axis, color=color_col, template=theme, **color_args)
+    #     if smooth_line:
+    #         fig.update_traces(line_shape="spline")
+    # elif chart_type == "Area":
+    #     fig = px.area(df, x=x_axis, y=y_axis, color=color_col, template=theme, **color_args)
+    # elif chart_type == "Scatter":
+    #     fig = px.scatter(df, x=x_axis, y=y_axis[0] if y_axis else None, color=color_col, template=theme, **color_args)
+    # elif chart_type == "Pie":
+    #     fig = px.pie(df, names=x_axis, values=y_axis[0] if y_axis else None, template=theme)
+    # elif chart_type == "Donut":
+    #     fig = px.pie(df, names=x_axis, values=y_axis[0] if y_axis else None, hole=0.5, template=theme)
+    # elif chart_type == "Histogram":
+    #     fig = px.histogram(df, x=x_axis, color=color_col, template=theme, **color_args)
+    # elif chart_type == "Box":
+    #     fig = px.box(df, x=x_axis, y=y_axis[0] if y_axis else None, color=color_col, template=theme, **color_args)
+    # elif chart_type == "Heatmap":
+    #     fig = px.density_heatmap(df, x=x_axis, y=y_axis[0] if y_axis else None, template=theme, color_continuous_scale=color_scheme)
+    # elif chart_type == "Treemap":
+    #     fig = px.treemap(df, path=[x_axis, color_col] if color_col else [x_axis], values=y_axis[0] if y_axis else None, template=theme)
 
-    if fig:
-        fig.update_layout(
-            title=dict(text=f"{chart_type} Chart", x=0.5, font=dict(size=20)),
-            legend=dict(orientation="h", y=-0.2, x=0.5, xanchor="center", yanchor="top") if show_legend else dict(visible=False),
-            margin=dict(t=30, b=50),
-        )
-        st.plotly_chart(fig, width='stretch')
-    else:
-        st.warning("Please select at least one Y-axis column.")
+    # if fig:
+    #     fig.update_layout(
+    #         title=dict(text=f"{chart_type} Chart", x=0.5, font=dict(size=20)),
+    #         legend=dict(orientation="h", y=-0.2, x=0.5, xanchor="center", yanchor="top") if show_legend else dict(visible=False),
+    #         margin=dict(t=30, b=50),
+    #     )
+    #     st.plotly_chart(fig, width='stretch')
+    # else:
+    #     st.warning("Please select at least one Y-axis column.")
 
 
 # ---------------------- DATA TAB ----------------------
