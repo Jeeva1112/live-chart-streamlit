@@ -64,24 +64,7 @@ with st.container():
             "<h3 style='color:white;margin-top:10px;'>📊 Digital Finance Chart Studio</h3>",
             unsafe_allow_html=True
         )
-# ---------------------- NAVBAR ----------------------
-selected = option_menu(
-    None,
-    ["Dashboard", "Data", "Settings"],
-    icons=["bar-chart", "database", "gear"],
-    orientation="horizontal",
-    styles={
-        "container": {"background-color": "#003366", "border-radius": "5px"},
-        "icon": {"color": "white", "font-size": "18px"},
-        "nav-link": {
-            "color": "white",
-            "font-size": "15px",
-            "margin": "0px",
-            "padding": "10px 25px",
-        },
-        "nav-link-selected": {"background-color": "#0073e6"},
-    },
-)
+
 
 # ---------------------- DATA LOAD ----------------------
 if selected == "Dashboard":
