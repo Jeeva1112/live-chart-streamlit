@@ -11,7 +11,7 @@ st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide",init
 pages = ["Home", "Library", "Tutorials", "Development", "Download"]
 styles = {
     "nav": {
-        "background-color": "rgb(123, 209, 146)",
+        "background-color": "rgb(58, 55, 212)",
     },
     "div": {
         "max-width": "32rem",
