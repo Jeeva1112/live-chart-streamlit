@@ -3,58 +3,63 @@ import pandas as pd
 import plotly.express as px
 from streamlit_option_menu import option_menu
 
-st.set_page_config(page_title="Live Chart", layout="wide", initial_sidebar_state="expanded")
+# ---------------------- PAGE CONFIG ----------------------
+st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide")
 
+# ---------------------- STYLES ----------------------
 st.markdown("""
     <style>
-        /* Remove excess top padding safely */
+        /* Reduce top padding for tighter layout */
         .block-container {
-            padding-top: 0rem !important;
+            padding-top: 0.5rem !important;
         }
 
-        /* Header area alignment */
-        .app-header {
+        /* Header styling */
+        .header-container {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 0.5rem 1rem;
+            gap: 15px;
             background-color: transparent;
+            padding: 0.3rem 1rem;
         }
 
-        .app-header img {
-            height: 55px;
-            margin-right: 8px;
+        .header-logo {
+            height: 48px;
         }
 
-        .app-title {
+        .header-title {
             color: white;
             font-size: 1.6rem;
             font-weight: 600;
             margin: 0;
-            line-height: 1;
+            padding: 0;
         }
 
-        /* Sidebar visible fix */
+        /* Sidebar customization (visible + dark theme) */
         section[data-testid="stSidebar"] {
             background-color: #0f1116 !important;
             border-right: 1px solid #1e1e1e !important;
-            width: 280px !important;
-        }
-        section[data-testid="stSidebar"] * {
-            color: white !important;
+            padding-top: 1rem !important;
         }
 
-        /* Hide footer but keep header intact */
+        section[data-testid="stSidebar"] * {
+            color: white !important;
+            font-size: 14px !important;
+        }
+
+        /* Hide footer safely, keep sidebar */
         footer {visibility: hidden !important;}
-</style>
+    </style>
 """, unsafe_allow_html=True)
-with st.container():
-    st.markdown("""
-        <div class="header-container">
-            <img src="philips.svg" width="60">
-            <h3 class="header-title">📊 Digital Finance Chart Studio</h3>
-        </div>
-    """, unsafe_allow_html=True)
+
+# ---------------------- HEADER ----------------------
+st.markdown("""
+    <div class="header-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Philips_logo.svg" class="header-logo">
+        <h3 class="header-title">📊 Digital Finance Chart Studio</h3>
+    </div>
+""", unsafe_allow_html=True)
+
 
 # ---------------------- NAVBAR ----------------------
 selected = option_menu(
