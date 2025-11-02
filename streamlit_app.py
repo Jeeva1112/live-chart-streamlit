@@ -56,6 +56,7 @@ with st.container():
     with col1:
         st.image("philips.svg", width=70)
     with col2:
+        st.image("philips.svg", width=70)
         st.markdown("<h2 style='color:white;margin-top:7px;'>📊 Digital Finance Chart Studio</h2>", unsafe_allow_html=True)
 
 # ---------------------- NAVBAR ----------------------
