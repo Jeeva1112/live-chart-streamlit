@@ -19,7 +19,7 @@ st.markdown("""
         header {visibility: hidden;}
         footer {visibility: hidden;}
         .sidebar .sidebar-content {
-            width: 280px;
+            width: 500px;
         }
         .css-1v3fvcr {padding-top: 0 !important;}
         .nav-tabs {
