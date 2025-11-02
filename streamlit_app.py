@@ -34,11 +34,6 @@ button[kind="header"] {
 .block-container {
     padding-top: 0rem !important;
     margin-top: 1rem !important;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 0rem 1.5rem;
-    margin-bottom: 0.2rem;
 }
 main[data-testid="stAppViewContainer"] {
     padding-top: 0rem !important;
@@ -54,9 +49,8 @@ main[data-testid="stAppViewContainer"] {
 with st.container():
     col1, col2 = st.columns([0.35, 0.65])
     with col1:
-        st.image("philips.svg", width=70)
+        st.image("philips.svg", width=60)
     with col2:
-        st.image("philips.svg", width=70)
         st.markdown("<h2 style='color:white;margin-top:7px;'>📊 Digital Finance Chart Studio</h2>", unsafe_allow_html=True)
 
 # ---------------------- NAVBAR ----------------------
