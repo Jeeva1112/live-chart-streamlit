@@ -11,7 +11,7 @@ st.markdown("""
     <style>
         /* Hide Streamlit toolbar, deploy, menu, and footer */
         #MainMenu {visibility: hidden;}
-        header {visibility: hidden !important;}
+    
         footer {visibility: hidden !important;}
         [data-testid="stToolbar"] {visibility: hidden !important;}
         [data-testid="stStatusWidget"] {display: none !important;}
