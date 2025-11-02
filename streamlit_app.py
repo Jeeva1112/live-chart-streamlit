@@ -15,7 +15,7 @@ section[data-testid="stSidebar"] {
     border-right: 1px solid #1e1e1e !important;
     width: 320px !important;   /* adjust width as you like */
     padding: 1rem !important;
-    padding-top: 01.5rem !important;
+    
 }
 
 /* Sidebar text style */
@@ -27,7 +27,7 @@ section[data-testid="stSidebar"] * {
 /* Prevent sidebar collapse button from hiding it */
 button[kind="header"] {
     display: none !important;
-    padding-top: 1.5rem !important;
+
 }
 
 /* Remove excess top padding from main page */
