@@ -70,6 +70,15 @@ selected = option_menu(
 
 # ---------------------- DATA LOAD ----------------------
 if selected == "Dashboard":
+    
+    if uploaded_file:
+        if uploaded_file.name.endswith(".csv"):
+            df = pd.read_csv(uploaded_file)
+        else:
+            df = pd.read_json(uploaded_file)
+    else:
+        st.info("Using sample data (Gapminder 2007).")
+        df = px.data.gapminder().query("year == 2007")
         # ---------------------- CONTROL PANEL ----------------------
     with st.sidebar:
         st.markdown("### ⚙️ Chart Controls")
@@ -96,14 +105,6 @@ if selected == "Dashboard":
     st.write("")
     uploaded_file = st.file_uploader("📁 Upload CSV or JSON file", type=["csv", "json"])
 
-    if uploaded_file:
-        if uploaded_file.name.endswith(".csv"):
-            df = pd.read_csv(uploaded_file)
-        else:
-            df = pd.read_json(uploaded_file)
-    else:
-        st.info("Using sample data (Gapminder 2007).")
-        df = px.data.gapminder().query("year == 2007")
 
 
 
