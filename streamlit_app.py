@@ -29,6 +29,22 @@ button[kind="header"] {
     display: none !important;
 
 }
+.custom-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0.5rem 0;
+            margin-bottom: 0.2rem;
+        }
+        .custom-header img {
+            height: 50px;
+            margin-top: 2px;
+        }
+        .custom-header h3 {
+            color: white;
+            margin: 0;
+            font-weight: 700;
+        }
 
 /* Remove excess top padding from main page */
 .block-container {
@@ -46,12 +62,12 @@ main[data-testid="stAppViewContainer"] {
 }
 </style>
 """, unsafe_allow_html=True)
-with st.container():
-    col1, col2 = st.columns([0.15, 0.65])
-    with col1:
-        st.image("philips.svg", width=70)
-    with col2:
-        st.markdown("<h2 style='color:white;margin-top:7px;'>📊 Digital Finance Chart Studio</h2>", unsafe_allow_html=True)
+st.markdown("""
+    <div class="custom-header">
+        <img src="philips.svg" alt="Logo">
+        <h3>📊 Digital Finance Chart Studio</h3>
+    </div>
+""", unsafe_allow_html=True)
 
 # ---------------------- NAVBAR ----------------------
 selected = option_menu(
