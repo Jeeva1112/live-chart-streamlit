@@ -22,7 +22,7 @@ st.markdown("""
         #     align-items: center;
         #     gap: 15px;
         #     background-color: transparent;
-        #     padding: 1rem 1.5rem 0.5rem 1.5rem; /* top margin below Streamlit bar */
+        #     padding: 0.3rem 1.5rem 0.5rem 1.5rem; /* top margin below Streamlit bar */
         # }
 
         # .header-logo {
