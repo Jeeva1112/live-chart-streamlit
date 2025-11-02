@@ -18,6 +18,18 @@ st.markdown("""
         }
         header {visibility: hidden;}
         footer {visibility: hidden;}
+         /* Force sidebar visible */
+        [data-testid="stSidebar"] {
+            visibility: visible !important;
+            display: block !important;
+            background-color: #0f1116;
+            color: white;
+            padding: 1rem;
+            width: 300px !important;
+        }
+        [data-testid="stSidebar"] * {
+            color: white !important;
+        }
         
         .css-1v3fvcr {padding-top: 0 !important;}
         .nav-tabs {
@@ -58,19 +70,7 @@ selected = option_menu(
 
 # ---------------------- DATA LOAD ----------------------
 if selected == "Dashboard":
-    st.write("")
-    uploaded_file = st.file_uploader("📁 Upload CSV or JSON file", type=["csv", "json"])
-
-    if uploaded_file:
-        if uploaded_file.name.endswith(".csv"):
-            df = pd.read_csv(uploaded_file)
-        else:
-            df = pd.read_json(uploaded_file)
-    else:
-        st.info("Using sample data (Gapminder 2007).")
-        df = px.data.gapminder().query("year == 2007")
-
-    # ---------------------- CONTROL PANEL ----------------------
+        # ---------------------- CONTROL PANEL ----------------------
     with st.sidebar:
         st.markdown("### ⚙️ Chart Controls")
         chart_type = st.selectbox(
@@ -93,6 +93,19 @@ if selected == "Dashboard":
         )
         show_legend = st.checkbox("Show Legend", True)
         smooth_line = st.checkbox("Smooth Lines (Line/Area)", False)
+    st.write("")
+    uploaded_file = st.file_uploader("📁 Upload CSV or JSON file", type=["csv", "json"])
+
+    if uploaded_file:
+        if uploaded_file.name.endswith(".csv"):
+            df = pd.read_csv(uploaded_file)
+        else:
+            df = pd.read_json(uploaded_file)
+    else:
+        st.info("Using sample data (Gapminder 2007).")
+        df = px.data.gapminder().query("year == 2007")
+
+
 
     # ---------------------- CHART GENERATION ----------------------
     fig = None
