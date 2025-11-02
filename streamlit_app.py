@@ -18,18 +18,20 @@ st.markdown("""
         }
         header {visibility: hidden;}
         footer {visibility: hidden;}
-         /* Force sidebar visible */
-        [data-testid="stSidebar"] {
+        section[data-testid="stSidebar"] {
             visibility: visible !important;
-            display: block !important;
-            background-color: #0f1116;
-            color: white;
-            padding: 1rem;
+            display: flex !important;
+            background-color: #0f1116 !important;
+            color: white !important;
             width: 300px !important;
+            padding: 1rem !important;
+            border-right: 1px solid #333;
         }
-        [data-testid="stSidebar"] * {
+        section[data-testid="stSidebar"] * {
             color: white !important;
         }
+        /* Prevent the sidebar from collapsing */
+        button[kind="header"] { display: none !important; }
         
         .css-1v3fvcr {padding-top: 0 !important;}
         .nav-tabs {
