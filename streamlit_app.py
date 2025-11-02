@@ -11,19 +11,6 @@ st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide")
 # ✅ Safely read query parameters
 query_params = st.experimental_get_query_params()
 
-if "payload" in query_params:
-    try:
-        # Parse JSON string from URL
-        json_data = json.loads(query_params["payload"][0])
-        pl = pd.DataFrame(json_data)
-        st.success("✅ Data received from Copilot/Flow!")
-    except Exception as e:
-        st.error(f"Error parsing data: {e}")
-        pl = pd.DataFrame()
-else:
-    st.info("No data received from URL. Using sample data.")
-    pl = px.data.gapminder().query("year == 2007")
-
 # ---------------------- STYLES ----------------------
 st.markdown("""
 <style>
@@ -82,6 +69,18 @@ if selected == "Dashboard":
         else:
             df = pd.read_json(uploaded_file)
     else:
+        if "payload" in query_params:
+            try:
+                # Parse JSON string from URL
+                json_data = json.loads(query_params["payload"][0])
+                pl = pd.DataFrame(json_data)
+                st.success("✅ Data received from Copilot/Flow!")
+            except Exception as e:
+                st.error(f"Error parsing data: {e}")
+                pl = pd.DataFrame()
+        else:
+            st.info("No data received from URL. Using sample data.")
+            pl = px.data.gapminder().query("year == 2007")
         df = pl
         # ---------------------- CONTROL PANEL ----------------------
     with st.sidebar:
