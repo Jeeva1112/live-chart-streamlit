@@ -37,7 +37,7 @@ with st.container():
         st.image("philips.svg", width=60)
     with col2:
         st.markdown("<h3 style='color:white;margin-top:7px;'>📊 Digital Finance Chart Studio</h3>", unsafe_allow_html=True)
-with st.toolbar():
+with st.Toolbar():
      st.markdown("<h3 style='color:white;margin-top:7px;'>📊 Digital Finance Chart Studio</h3>", unsafe_allow_html=True)
 # ---------------------- NAVBAR ----------------------
 selected = option_menu(
