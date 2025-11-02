@@ -11,7 +11,7 @@ st.markdown("""
 <style>
 .block-container {
      padding-top: 0rem !important;
-    margin-top: 1.5rem !important;  /* Pull content slightly up */
+    margin-top: 1.8rem !important;  /* Pull content slightly up */
 }
 
 /* Also handle Streamlit Cloud’s new layout container */
