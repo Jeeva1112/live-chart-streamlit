@@ -15,7 +15,6 @@ section[data-testid="stSidebar"] {
     border-right: 1px solid #1e1e1e !important;
     width: 320px !important;   /* adjust width as you like */
     padding: 1rem !important;
-    padding-top: 2rem !important;
 }
 
 /* Sidebar text style */
