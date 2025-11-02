@@ -65,6 +65,7 @@ selected = option_menu(
 
 # ---------------------- DATA LOAD ----------------------
 if selected == "Dashboard":
+    st.sidebar.markdown("### ⚙️ Chart Controls")
     st.write("")
     uploaded_file = st.file_uploader("📁 Upload CSV or JSON file", type=["csv", "json"])
 
