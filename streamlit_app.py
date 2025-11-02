@@ -6,52 +6,122 @@ from streamlit_option_menu import option_menu
 # ---------------------- PAGE CONFIG ----------------------
 st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide")
 
-# ---------------------- STYLES ----------------------
+import streamlit as st
+from streamlit_option_menu import option_menu
+import pandas as pd
+import plotly.express as px
+
+st.set_page_config(page_title="Philips Digital Chart Studio", layout="wide")
+
+# ---------------------- CSS ----------------------
 st.markdown("""
-<style>
-.block-container {
-     padding-top: 0rem !important;
-    margin-top: 2rem !important;  /* Pull content slightly up */
-}
+    <style>
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+        [data-testid="stToolbar"] {visibility: hidden !important;}
+        header {visibility: hidden !important;}
 
-/* Also handle Streamlit Cloud’s new layout container */
-main[data-testid="stAppViewContainer"] {
-    padding-top: 0rem !important;
-    margin-top: -1rem !important;
-}
+        .stApp {
+            background-color: #0f1116;
+            color: white;
+        }
 
-/* Hide default top header padding */
-footer {visibility: hidden; height: 0 !important;}
-.sidebar .sidebar-content { width: 280px !important; background-color: #0f1116 !important; }
-section[data-testid="stSidebar"] { background-color: #0f1116 !important; border-right: 1px solid #1e1e1e; width: 280px !important; display:block !important; }
-section[data-testid="stSidebar"] * { color: white !important; font-size: 14px; }
-</style>
+        /* ----- TOP RIBBON ----- */
+        .top-ribbon {
+            background-color: #003366;
+            color: white;
+            border-radius: 8px;
+            padding: 0.6rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .top-left {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+        .app-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        /* ----- CUSTOM SIDEBAR ----- */
+        .sidebar-container {
+            position: fixed;
+            top: 4.5rem;
+            left: 0;
+            height: calc(100vh - 4.5rem);
+            width: 260px;
+            background-color: #1b1e25;
+            padding: 1.2rem;
+            border-right: 1px solid #333;
+            overflow-y: auto;
+        }
+
+        /* Main content area */
+        .main-content {
+            margin-left: 270px;
+            padding: 1rem 2rem;
+        }
+
+        /* Scrollbar style */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #444;
+            border-radius: 4px;
+        }
+    </style>
 """, unsafe_allow_html=True)
-with st.container():
-    col1, col2 = st.columns([0.15, 0.65])
-    with col1:
-        st.image("philips.svg", width=60)
-    with col2:
-        st.markdown("<h3 style='color:white;margin-top:7px;'>📊 Digital Finance Chart Studio</h3>", unsafe_allow_html=True)
 
-# ---------------------- NAVBAR ----------------------
-selected = option_menu(
-    None,
-    ["Dashboard", "Data", "Settings"],
-    icons=["bar-chart", "database", "gear"],
-    orientation="horizontal",
-    styles={
-        "container": {"background-color": "#003366", "border-radius": "5px"},
-        "icon": {"color": "white", "font-size": "18px"},
-        "nav-link": {
-            "color": "white",
-            "font-size": "15px",
-            "margin": "0px",
-            "padding": "10px 10px",
+# ---------------------- HEADER ----------------------
+st.markdown("""
+<div class="top-ribbon">
+    <div class="top-left">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Philips_logo_new.svg" width="50">
+        <p class="app-title">📊 Digital Finance Chart Studio</p>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+# ---------------------- SIDEBAR (Custom Container) ----------------------
+with st.container():
+    st.markdown("""
+    <div class="sidebar-container">
+        <h4 style="color:white;">⚙️ Chart Controls</h4>
+    </div>
+    """, unsafe_allow_html=True)
+
+# ---------------------- MAIN CONTENT ----------------------
+with st.container():
+    st.markdown('<div class="main-content">', unsafe_allow_html=True)
+
+    selected = option_menu(
+        None,
+        ["Dashboard", "Data", "Settings"],
+        icons=["bar-chart", "database", "gear"],
+        orientation="horizontal",
+        styles={
+            "container": {"background-color": "#003366", "border-radius": "5px"},
+            "icon": {"color": "white", "font-size": "18px"},
+            "nav-link": {
+                "color": "white",
+                "font-size": "15px",
+                "margin": "0px",
+                "padding": "10px 25px",
+            },
+            "nav-link-selected": {"background-color": "#0073e6"},
         },
-        "nav-link-selected": {"background-color": "#0073e6"},
-    },
-)
+    )
+
+    st.write("### 👋 Welcome to Digital Finance Chart Studio!")
+    st.info("Your fixed sidebar and top ribbon layout are now independent.")
+
+    st.markdown('</div>', unsafe_allow_html=True)
+
 
 # ---------------------- DATA LOAD ----------------------
 if selected == "Dashboard":
