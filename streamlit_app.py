@@ -20,10 +20,10 @@ main[data-testid="stAppViewContainer"] {
     margin-top: -1rem !important;
 }
 
-/* Hide default top header padding */
-
-        [data-testid="stToolbar"] {visibility: hidden !important;}
-        #MainMenu {visibility: hidden;}
+  /* Hide Streamlit top-right toolbar only */
+        [data-testid="stToolbarActions"] {display: none !important;}
+        [data-testid="stToolbar"] button[kind="header"] {display: none !important;}
+        #MainMenu {display: none !important;}
         footer {visibility: hidden;}
 
 .sidebar .sidebar-content { width: 280px !important; background-color: #0f1116 !important; }
