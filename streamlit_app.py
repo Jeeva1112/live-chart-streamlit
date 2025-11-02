@@ -8,34 +8,25 @@ st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide")
 
 # ---------------------- STYLES ----------------------
 st.markdown("""
-    <style>
-        /* Hide Streamlit toolbar, deploy, menu, and footer */
-        #MainMenu {visibility: hidden;}
-    
-        footer {visibility: hidden !important;}
-        [data-testid="stToolbar"] {visibility: hidden !important;}
-        [data-testid="stStatusWidget"] {display: none !important;}
-        [data-testid="stDecoration"] {display: none !important;}
-        [data-testid="stAppViewBlockContainer"] {
-            padding-top: 0.5rem !important;
-        }
+<style>
+.block-container {
+    padding-top: 0rem !important;
+    margin-top: -1rem !important;  /* Pull content slightly up */
+}
 
-        /* Keep sidebar visible and styled */
-        section[data-testid="stSidebar"] {
-            visibility: visible !important;
-            display: block !important;
-            background-color: #0f1116 !important;
-            border-right: 1px solid #1e1e1e !important;
-        }
-        section[data-testid="stSidebar"] * {
-            color: white !important;
-            font-size: 14px !important;
-        }
-    
-    </style>
+/* Also handle Streamlit Cloud’s new layout container */
+main[data-testid="stAppViewContainer"] {
+    padding-top: 0rem !important;
+    margin-top: -1rem !important;
+}
+
+/* Hide default top header padding */
+header, footer {visibility: hidden; height: 0 !important;}
+.sidebar .sidebar-content { width: 280px !important; background-color: #0f1116 !important; }
+section[data-testid="stSidebar"] { background-color: #0f1116 !important; border-right: 1px solid #1e1e1e; width: 280px !important; display:block !important; }
+section[data-testid="stSidebar"] * { color: white !important; font-size: 14px; }
+</style>
 """, unsafe_allow_html=True)
-
-# ---------------------- HEADER ----------------------
 with st.container():
     col1, col2 = st.columns([0.15, 0.65])
     with col1:
