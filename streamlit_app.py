@@ -18,14 +18,7 @@ st.markdown("""
         }
         header {visibility: hidden;}
         footer {visibility: hidden;}
-        [data-testid="stSidebar"] {
-            background-color: #0f1116;
-            padding: 1rem 0.5rem;
-            width: 260px !important;
-        }
-        [data-testid="stSidebar"] * {
-            color: white;
-        }
+        
         .css-1v3fvcr {padding-top: 0 !important;}
         .nav-tabs {
             background-color: #003366;
@@ -65,7 +58,6 @@ selected = option_menu(
 
 # ---------------------- DATA LOAD ----------------------
 if selected == "Dashboard":
-    st.sidebar.markdown("### ⚙️ Chart Controls")
     st.write("")
     uploaded_file = st.file_uploader("📁 Upload CSV or JSON file", type=["csv", "json"])
 
