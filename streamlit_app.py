@@ -32,7 +32,7 @@ button[kind="header"] {
 
 /* Remove excess top padding from main page */
 .block-container {
-    padding-top: 0rem !important;
+    padding-top: 1rem !important;
     margin-top: 1rem !important;
 }
 main[data-testid="stAppViewContainer"] {
