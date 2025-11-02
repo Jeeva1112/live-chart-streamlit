@@ -37,7 +37,7 @@ button[kind="header"] {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 0.5rem 0;
+    padding: 1.5rem 0;
     margin-bottom: 0.2rem;
 }
 main[data-testid="stAppViewContainer"] {
