@@ -27,6 +27,10 @@ styles = {
         "background-color": "rgba(255, 255, 255, 0.35)",
     },
 }
+page = st_navbar(styles=styles)
+
+with st.sidebar:
+    st.write("Sidebar")
 # ---------------------- NAVBAR ----------------------
 selected = option_menu(
     None,
