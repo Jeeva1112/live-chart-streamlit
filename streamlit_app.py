@@ -21,7 +21,11 @@ main[data-testid="stAppViewContainer"] {
 }
 
 /* Hide default top header padding */
-footer {visibility: hidden; height: 0 !important;}
+
+        [data-testid="stToolbar"] {visibility: hidden !important;}
+        #MainMenu {visibility: hidden;}
+        footer {visibility: hidden;}
+
 .sidebar .sidebar-content { width: 280px !important; background-color: #0f1116 !important; }
 section[data-testid="stSidebar"] { background-color: #0f1116 !important; border-right: 1px solid #1e1e1e; width: 280px !important; display:block !important; }
 section[data-testid="stSidebar"] * { color: white !important; font-size: 14px; }
