@@ -32,7 +32,7 @@ selected = option_menu(
             "color": "white",
             "font-size": "15px",
             "margin": "0px",
-            "padding": "10px 25px",
+            "padding": "10px 10px",
         },
         "nav-link-selected": {"background-color": "#0073e6"},
     },
