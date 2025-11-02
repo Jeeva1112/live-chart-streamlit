@@ -67,7 +67,16 @@ with st.container():
 
 
 # ---------------------- DATA LOAD ----------------------
-if selected == "Dashboard":
+with st.sidebar:
+    st.markdown("### ⚙️ Chart Controls")
+    chart_type = st.selectbox(
+      "Chart Type",
+            [
+                "Bar", "Line", "Area", "Scatter", "Pie", "Donut",
+                "Histogram", "Box", "Heatmap", "Treemap"
+            ]
+        )
+# if selected == "Dashboard":
     # st.write("")
     # uploaded_file = st.file_uploader("📁 Upload CSV or JSON file", type=["csv", "json"])
     # if uploaded_file:
@@ -79,30 +88,30 @@ if selected == "Dashboard":
     #     st.info("Using sample data (Gapminder 2007).")
     #     df = px.data.gapminder().query("year == 2007")
         # ---------------------- CONTROL PANEL ----------------------
-    st.sidebar.success("✅ Sidebar is visible now!")
+    # st.sidebar.success("✅ Sidebar is visible now!")
 
-    with st.sidebar:
-        st.markdown("### ⚙️ Chart Controls")
-        chart_type = st.selectbox(
-            "Chart Type",
-            [
-                "Bar", "Line", "Area", "Scatter", "Pie", "Donut",
-                "Histogram", "Box", "Heatmap", "Treemap"
-            ]
-        )
+    # with st.sidebar:
+    #     st.markdown("### ⚙️ Chart Controls")
+    #     chart_type = st.selectbox(
+    #         "Chart Type",
+    #         [
+    #             "Bar", "Line", "Area", "Scatter", "Pie", "Donut",
+    #             "Histogram", "Box", "Heatmap", "Treemap"
+    #         ]
+    #     )
         # x_axis = st.selectbox("X-axis", df.columns)
         # y_axis = st.multiselect("Y-axis", df.columns)
         # color_col = st.selectbox("Color (optional)", [None] + df.columns.tolist())
-        theme = st.selectbox(
-            "Theme",
-            ["plotly", "plotly_white", "plotly_dark", "seaborn", "ggplot2", "simple_white"]
-        )
-        color_scheme = st.selectbox(
-            "Color Palette",
-            ["Plotly", "Viridis", "Cividis", "Plasma", "Turbo", "RdBu", "Earth"]
-        )
-        show_legend = st.checkbox("Show Legend", True)
-        smooth_line = st.checkbox("Smooth Lines (Line/Area)", False)
+        # theme = st.selectbox(
+        #     "Theme",
+        #     ["plotly", "plotly_white", "plotly_dark", "seaborn", "ggplot2", "simple_white"]
+        # )
+        # color_scheme = st.selectbox(
+        #     "Color Palette",
+        #     ["Plotly", "Viridis", "Cividis", "Plasma", "Turbo", "RdBu", "Earth"]
+        # )
+        # show_legend = st.checkbox("Show Legend", True)
+        # smooth_line = st.checkbox("Smooth Lines (Line/Area)", False)
 
 
 
@@ -152,19 +161,19 @@ if selected == "Dashboard":
 
 
 # ---------------------- DATA TAB ----------------------
-elif selected == "Data":
-    st.subheader("📊 Data Preview")
-    uploaded_file = st.file_uploader("Upload CSV or JSON file", type=["csv", "json"])
-    if uploaded_file:
-        if uploaded_file.name.endswith(".csv"):
-            df = pd.read_csv(uploaded_file)
-        else:
-            df = pd.read_json(uploaded_file)
-        st.dataframe(df)
-    else:
-        st.info("Upload a dataset to preview here.")
+# elif selected == "Data":
+#     st.subheader("📊 Data Preview")
+#     uploaded_file = st.file_uploader("Upload CSV or JSON file", type=["csv", "json"])
+#     if uploaded_file:
+#         if uploaded_file.name.endswith(".csv"):
+#             df = pd.read_csv(uploaded_file)
+#         else:
+#             df = pd.read_json(uploaded_file)
+#         st.dataframe(df)
+#     else:
+#         st.info("Upload a dataset to preview here.")
 
 # ---------------------- SETTINGS TAB ----------------------
-elif selected == "Settings":
-    st.subheader("⚙️ App Settings")
-    st.write("Here you can add branding, themes, or default behavior options later.")
+# elif selected == "Settings":
+#     st.subheader("⚙️ App Settings")
+#     st.write("Here you can add branding, themes, or default behavior options later.")
