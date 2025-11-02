@@ -13,7 +13,7 @@ section[data-testid="stSidebar"] * { color: white !important; font-size: 14px; }
 </style>
 """, unsafe_allow_html=True)
 with st.container():
-    col1, col2 = st.columns([0.15, 0.85])
+    col1, col2 = st.columns([0.15, 0.4])
     with col1:
         st.image("philips.svg", width=70)
     with col2:
