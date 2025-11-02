@@ -6,78 +6,46 @@ from streamlit_option_menu import option_menu
 st.set_page_config(page_title="Live Chart", layout="wide", initial_sidebar_state="expanded")
 
 st.markdown("""
-<style>
-/* Force the sidebar to always stay visible */
-section[data-testid="stSidebar"] {
-    display: flex !important;
-    visibility: visible !important;
-    background-color: #0f1116 !important;
-    border-right: 1px solid #1e1e1e !important;
-    width: 320px !important;   /* adjust width as you like */
-    padding: 1rem !important;
-    
-}
-
-/* Sidebar text style */
-section[data-testid="stSidebar"] * {
-    color: white !important;
-    font-size: 14px !important;
-}
-
-/* Prevent sidebar collapse button from hiding it */
-button[kind="header"] {
-    display: none !important;
-
-}
-
-/* Remove excess top padding from main page */
-        [data-testid="stVerticalBlock"] > div:first-child {
-            padding-top: 0rem !important;
-            margin-top: -1rem !important;
-        }
-
-        /* Header container alignment */
-        .header-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 0.5rem;
-        }
-
-        .header-container img {
-            margin-top: 0 !important;
-        }
-
-        .header-title {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        /* Sidebar toggle visibility & alignment */
-        button[kind="header"] {
-            top: 5px !important;
-        }
-
-        /* Reduce sidebar width slightly */
-        section[data-testid="stSidebar"] {
-            width: 270px !important;
-        }
-
-        /* Adjust Streamlit body to start higher */
+    <style>
+        /* Remove excess top padding safely */
         .block-container {
             padding-top: 0rem !important;
         }
-main[data-testid="stAppViewContainer"] {
-    padding-top: 0rem !important;
-}
 
-/* Dark theme base */
-.stApp {
-    background-color: #0f1116 !important;
-    color: white !important;
-}
+        /* Header area alignment */
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 0.5rem 1rem;
+            background-color: transparent;
+        }
+
+        .app-header img {
+            height: 55px;
+            margin-right: 8px;
+        }
+
+        .app-title {
+            color: white;
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1;
+        }
+
+        /* Sidebar visible fix */
+        section[data-testid="stSidebar"] {
+            background-color: #0f1116 !important;
+            border-right: 1px solid #1e1e1e !important;
+            width: 280px !important;
+        }
+        section[data-testid="stSidebar"] * {
+            color: white !important;
+        }
+
+        /* Hide footer but keep header intact */
+        footer {visibility: hidden !important;}
 </style>
 """, unsafe_allow_html=True)
 with st.container():
