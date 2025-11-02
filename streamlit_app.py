@@ -14,7 +14,6 @@ st.markdown("""
     margin-top: 2rem !important;  /* Pull content slightly up */
 }
 
-[data-testid="stDecoration"] {display: none !important;}
 /* Also handle Streamlit Cloud’s new layout container */
 main[data-testid="stAppViewContainer"] {
     padding-top: 0rem !important;
