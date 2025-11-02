@@ -13,7 +13,8 @@ st.markdown("""
      padding-top: 0rem !important;
     margin-top: 2rem !important;  /* Pull content slightly up */
 }
-
+[data-testid="stToolbar"] {visibility: hidden !important;}
+[data-testid="stDecoration"] {display: none !important;}
 /* Also handle Streamlit Cloud’s new layout container */
 main[data-testid="stAppViewContainer"] {
     padding-top: 0rem !important;
