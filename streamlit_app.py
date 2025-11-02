@@ -9,45 +9,43 @@ st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide")
 # ---------------------- STYLES ----------------------
 st.markdown("""
     <style>
-        /* Reduce top padding for tighter layout */
+        /* Reduce main app padding */
         .block-container {
-            padding-top: 0.5rem !important;
+            padding-top: 0.2rem !important;
         }
 
-        /* Header styling */
+        /* Header container: now with proper spacing from toolbar */
         .header-container {
             display: flex;
             align-items: center;
             gap: 15px;
             background-color: transparent;
-            padding: 0.3rem 1rem;
+            padding: 1rem 1.5rem 0.5rem 1.5rem; /* top margin below Streamlit bar */
         }
 
         .header-logo {
-            height: 48px;
+            height: 45px;
         }
 
         .header-title {
             color: white;
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             font-weight: 600;
             margin: 0;
-            padding: 0;
         }
 
-        /* Sidebar customization (visible + dark theme) */
+        /* Sidebar styling */
         section[data-testid="stSidebar"] {
             background-color: #0f1116 !important;
             border-right: 1px solid #1e1e1e !important;
             padding-top: 1rem !important;
         }
-
         section[data-testid="stSidebar"] * {
             color: white !important;
             font-size: 14px !important;
         }
 
-        /* Hide footer safely, keep sidebar */
+        /* Keep footer hidden, do NOT hide header */
         footer {visibility: hidden !important;}
     </style>
 """, unsafe_allow_html=True)
@@ -55,15 +53,10 @@ st.markdown("""
 # ---------------------- HEADER ----------------------
 st.markdown("""
     <div class="header-container">
-    with st.container():
-    col1, col2 = st.columns([0.15, 0.65])
-    with col1:
-        st.image("philips.svg", width=70)
-    with col2:
-        st.markdown("<h2 style='color:white;margin-top:7px;'>📊 Digital Finance Chart Studio</h2>", unsafe_allow_html=True)
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/20/Philips_logo.svg" class="header-logo">
+        <h3 class="header-title">📊 Digital Finance Chart Studio</h3>
     </div>
 """, unsafe_allow_html=True)
-
 
 # ---------------------- NAVBAR ----------------------
 selected = option_menu(
