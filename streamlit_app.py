@@ -34,6 +34,9 @@ button[kind="header"] {
 .block-container {
     padding-top: 1rem !important;
     margin-top: 1rem !important;
+    border-right: 1px solid #1e1e1e !important;
+    width: 320px !important;   /* adjust width as you like */
+    padding: 1rem !important;
 }
 main[data-testid="stAppViewContainer"] {
     padding-top: 0rem !important;
