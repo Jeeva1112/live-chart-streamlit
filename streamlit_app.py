@@ -135,7 +135,7 @@ if selected == "Dashboard":
             legend=dict(orientation="h", y=-0.2, x=0.5, xanchor="center", yanchor="top") if show_legend else dict(visible=False),
             margin=dict(t=30, b=50),
         )
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width='stretch')
     else:
         st.warning("Please select at least one Y-axis column.")
 
