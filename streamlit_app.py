@@ -8,35 +8,44 @@ st.set_page_config(page_title="Digital Finance Chart Studio", layout="wide")
 
 # ---------------------- STYLES ----------------------
 st.markdown("""
-<style>
-.block-container {
-     padding-top: 0rem !important;
-    margin-top: 2rem !important;  /* Pull content slightly up */
-}
-
-/* Also handle Streamlit Cloud’s new layout container */
-main[data-testid="stAppViewContainer"] {
-    padding-top: 0rem !important;
-    margin-top: -1rem !important;
-}
-
-  /* Hide Streamlit top-right toolbar only */
-        [data-testid="stToolbarActions"] {display: none !important;}
-        [data-testid="stToolbar"] button[kind="header"] {display: none !important;}
-        #MainMenu {display: none !important;}
-        footer {visibility: hidden;}
-
-.sidebar .sidebar-content { width: 280px !important; background-color: #0f1116 !important; }
-section[data-testid="stSidebar"] { background-color: #0f1116 !important; border-right: 1px solid #1e1e1e; width: 280px !important; display:block !important; }
-section[data-testid="stSidebar"] * { color: white !important; font-size: 14px; }
-</style>
+    <style>
+        /* Toolbar container */
+        .custom-toolbar {
+            background-color: #003366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.6rem 1.5rem;
+            border-radius: 5px;
+        }
+        .toolbar-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .toolbar-left img {
+            width: 50px;
+            height: auto;
+        }
+        .toolbar-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+    </style>
 """, unsafe_allow_html=True)
-with st.container():
-    col1, col2 = st.columns([0.15, 0.65])
-    with col1:
-        st.image("philips.svg", width=60)
-    with col2:
-        st.markdown("<h3 style='color:white;margin-top:7px;'>📊 Digital Finance Chart Studio</h3>", unsafe_allow_html=True)
+
+st.markdown("""
+<div class="custom-toolbar">
+    <div class="toolbar-left">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Philips_logo_new.svg">
+        <span class="toolbar-title">📊 Digital Finance Chart Studio</span>
+    </div>
+    <div class="toolbar-right">
+        <span style="font-size:14px;opacity:0.8;">Finance BI</span>
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
 # ---------------------- NAVBAR ----------------------
 selected = option_menu(
